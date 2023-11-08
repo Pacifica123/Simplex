@@ -18,6 +18,6 @@ int main(){
 
     table.iterating();
 
-    std::cout << table.Lx.sum() << std::endl;
+    // std::cout << table.Lx.sum() << std::endl;
     return 0;
 }

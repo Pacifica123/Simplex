@@ -64,6 +64,7 @@ namespace Simplex {
             void get_beginer(); // нахождение начального базиса и опорного плана
             SimplexTable(ConstraintSystem constraints, TargetFunc Lx);
             std::vector<double> calculate_deltas();
+            void print_table(int iteration);
     };
     
 }

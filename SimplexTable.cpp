@@ -167,6 +167,9 @@ namespace Simplex {
         get_beginer(); // Сначала ищем начальный базис и план
         int iteration = 0;
         while (iteration < MAX_ITERATIONS) {
+            
+            print_table(iteration);
+
             delta = calculate_deltas();
 
             // Проверка на оптимальность
@@ -242,8 +245,22 @@ namespace Simplex {
             BeginerBasis.push_back(basis_coeff);
 
             // Определить начальный опорный план на основе свободных членов
-            x_plan.push_back(constraints.matrix[i][0]);
+            x_plan.push_back(constraints.matrix[0][i]);
         }
+    }
+
+    void SimplexTable::print_table(int iteration)
+    {
+        std::cout << " Cb  B" << iteration << "  Xb" << iteration << "    ";
+        for (size_t j = 0; j < Lx.c.size(); j++) {
+            std::cout << Lx.c[j] << "   ";
+        }
+        std::cout << std::endl;
+        std::cout << "                ";
+        for (size_t j = 0; j < Lx.c.size(); j++) {
+            std::cout << "A" << j+1 << "   ";
+        }
+
     }
 
 } // Конец пространства имен Simplex
