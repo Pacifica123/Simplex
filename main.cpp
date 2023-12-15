@@ -17,6 +17,7 @@ int main(){
     Simplex::SimplexTable table = Simplex::SimplexTable(cs, Lx);
 
     table.iterating();
+    //
 
     // std::cout << table.Lx.sum() << std::endl;
     return 0;
